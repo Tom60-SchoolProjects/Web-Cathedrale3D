@@ -1,6 +1,6 @@
 import {OBJLoader} from "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Libs/OBJLoader.js";
 import * as THREE from 'three';
-import GameLoop from githubRepos + "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/GameLoop.js";
+import GameLoop from "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/GameLoop.js";
 
 export default class Scene {
     /**
@@ -34,7 +34,7 @@ export default class Scene {
 
         // Chargement du modèle
         tempo = new OBJLoader(manager);
-        tempo.load('../TranseptSud/transeptSudBox.obj',
+        tempo.load('https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/TranseptSud/transeptSudBox.obj',
             /**@param {THREE.Object3D} object*/
             function (object) {
                 object.traverse(function (child) {
@@ -193,7 +193,7 @@ export default class Scene {
         hint3.position.set(-5.9, 2.4, 2.6);
         hint3.rotation.set(0,  THREE.MathUtils.DEG2RAD * 90, 0);
 
-        tempo.load(githubRepos + "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Assets/Indice3.png', function (image) {
+        tempo.load("https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Assets/Indice3.png', function (image) {
             hint3Texture.magFilter = THREE.NearestFilter;
             hint3Texture.minFilter = THREE.NearestMipmapNearestFilter;
             hint3Texture.anisotropy = 0;
@@ -220,7 +220,7 @@ export default class Scene {
         hint4.position.set(-5.9, 2.4, 2.6);
         hint4.rotation.set(0,  THREE.MathUtils.DEG2RAD * 90, 0);
 
-        tempo.load(githubRepos + "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Assets/Indice4.png', function (image) {
+        tempo.load("https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Assets/Indice4.png', function (image) {
             hint4Texture.magFilter = THREE.NearestFilter;
             hint4Texture.minFilter = THREE.NearestMipmapNearestFilter;
             hint4Texture.anisotropy = 0;
@@ -317,7 +317,7 @@ export default class Scene {
         let texture = new THREE.Texture();
 
         let tempo = new THREE.ImageLoader(manager);
-        tempo.load(githubRepos + "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Assets/torch.png', function (image) {
+        tempo.load("https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Assets/torch.png', function (image) {
             texture.magFilter = THREE.NearestFilter;
             texture.minFilter = THREE.NearestMipmapNearestFilter;
             texture.anisotropy = 0;
