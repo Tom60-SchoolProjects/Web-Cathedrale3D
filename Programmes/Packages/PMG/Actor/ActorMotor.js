@@ -1,6 +1,6 @@
-import GameLoop from "../../../GameLoop.js";
+import GameLoop from "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Programmes/GameLoop.js";
 import * as THREE from 'three';
-import Collision from "../../../Collision.js";
+import Collision from "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Programmes/Collision.js";
 
 /**
  * Smooth and apply mouvement of the player
