@@ -1,0 +1,7 @@
+{
+  "name": "transept_cathedrale_amiens",
+  "version": "1.0.0",
+  "description": "Transept de la cathédrale d'Amiens",
+  "main": "Programmes/Aff_2022.html.js",
+  "private": true
+}
