@@ -1,0 +1,89 @@
+<html>
+<head>
+    <title>Transept de la cathédrale d'Amiens</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+
+<body style="margin: 0">
+
+<!--<div id="code" style="visibility: hidden">
+    Entrez le code
+</div>-->
+
+<script type="importmap">
+			{
+				"imports": {"three": "./Libs/three.module.js"}
+			}
+</script>
+
+<script type="module">
+    import * as THREE from 'three';
+    import GameLoop from "./Programmes/GameLoop.js";
+    import Player from "./Programmes/Player/Player.js";
+    import PlayerInput from "./Programmes/Player/PlayerInput.js";
+    import { CharacterController } from "./Programmes/Packages/PMG/PMG.js";
+    import Collision from "./Programmes/Collision.js";
+    import Scene from "./Programmes/Scene.js";
+
+    /**@type {HTMLDivElement}*/
+    let container;
+
+    /**@type {THREE.PerspectiveCamera}*/
+    let camera;
+    /**@type {THREE.Scene}*/
+    let scene;
+    /**@type {THREE.WebGLRenderer}*/
+    let rendu;
+
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function Init() {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+
+        camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.01, 100);
+
+        // Scene
+        scene = new THREE.Scene();
+        Scene.load(scene);
+
+        // Player
+        let playerObject = Scene.getPlayerModel(scene, camera);
+
+        playerObject.position.set(0, 1.5, 0);
+
+        let playerInput = new PlayerInput(0);
+        let player = new Player(playerObject, playerInput);
+        let characterController = new CharacterController(player);
+
+        // Collision
+        Collision.setPlaygroundZone(5, 20, 11);
+
+        // WebGL
+        rendu = new THREE.WebGLRenderer();
+        rendu.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(rendu.domElement);
+        window.addEventListener('resize', onWindowResize, false);
+
+        container.addEventListener('click', () => container.requestPointerLock(), false);
+
+        GameLoop.add(Afficher);
+        GameLoop.update();
+
+    }
+
+    function Afficher() {
+        rendu.render(scene, camera);
+    }
+
+    Init();
+    //Animer();
+</script>
+
+</body>
+</html>
