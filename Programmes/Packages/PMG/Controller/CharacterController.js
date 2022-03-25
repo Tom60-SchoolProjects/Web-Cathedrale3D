@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {CharacterMovementStyles} from "./CharacterMovementStyle.js";
+import {CharacterMovementStyles} from "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Programmes/Packages/PMG/Controller/CharacterMovementStyle.js";
 
 /**
  * Transform input into movement
