@@ -1,4 +1,4 @@
-import Action from "./Action.js";
+import Action from "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Programmes/Action.js";
 
 export default class GameLoop {
     //region Variables
