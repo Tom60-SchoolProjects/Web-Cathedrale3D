@@ -1,5 +1,5 @@
-import Action from "../Action.js";
-import GameLoop from "../GameLoop.js";
+import Action from "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Programmes/Action.js";
+import GameLoop from "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Programmes/GameLoop.js";
 import * as THREE from 'three';
 
 /**
