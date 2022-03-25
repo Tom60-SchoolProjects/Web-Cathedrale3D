@@ -1,6 +1,6 @@
-import {OBJLoader} from "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Libs/OBJLoader.js";
+import {OBJLoader} from "../Libs/OBJLoader.js";
 import * as THREE from 'three';
-import GameLoop from "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/GameLoop.js";
+import GameLoop from "./GameLoop.js";
 
 export default class Scene {
     /**
@@ -27,14 +27,14 @@ export default class Scene {
         let texture = new THREE.Texture();
 
         let tempo = new THREE.ImageLoader(manager);
-        tempo.load("https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/TranseptSud/TranseptTexture4096.jpg', function (image) {
+        tempo.load('./TranseptSud/TranseptTexture4096.jpg', function (image) {
             texture.image = image;
             texture.needsUpdate = true;
         });
 
         // Chargement du modèle
         tempo = new OBJLoader(manager);
-        tempo.load('https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/TranseptSud/transeptSudBox.obj',
+        tempo.load('./TranseptSud/transeptSudBox.obj',
             /**@param {THREE.Object3D} object*/
             function (object) {
                 object.traverse(function (child) {
@@ -128,7 +128,7 @@ export default class Scene {
         hint1CubeModel.position.set(0, 0, -5);
         hint1.add(hint1CubeModel);
 
-        tempo.load("https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Assets/Indice1.png', function (image) {
+        tempo.load('./Assets/Indice1.png', function (image) {
             hint1Texture.magFilter = THREE.NearestFilter;
             hint1Texture.minFilter = THREE.NearestMipmapNearestFilter;
             hint1Texture.anisotropy = 0;
@@ -164,7 +164,7 @@ export default class Scene {
         hint2CubeModel.position.set(5, 0, 10);
         hint2.add(hint2CubeModel);
 
-        tempo.load('../Assets/Indice2.png', function (image) {
+        tempo.load('./Assets/Indice2.png', function (image) {
             hint2Texture.magFilter = THREE.NearestFilter;
             hint2Texture.minFilter = THREE.NearestMipmapNearestFilter;
             hint2Texture.anisotropy = 0;
@@ -193,7 +193,7 @@ export default class Scene {
         hint3.position.set(-5.9, 2.4, 2.6);
         hint3.rotation.set(0,  THREE.MathUtils.DEG2RAD * 90, 0);
 
-        tempo.load("https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Assets/Indice3.png', function (image) {
+        tempo.load('./Assets/Indice3.png', function (image) {
             hint3Texture.magFilter = THREE.NearestFilter;
             hint3Texture.minFilter = THREE.NearestMipmapNearestFilter;
             hint3Texture.anisotropy = 0;
@@ -220,7 +220,7 @@ export default class Scene {
         hint4.position.set(-5.9, 2.4, 2.6);
         hint4.rotation.set(0,  THREE.MathUtils.DEG2RAD * 90, 0);
 
-        tempo.load("https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Assets/Indice4.png', function (image) {
+        tempo.load('./Assets/Indice4.png', function (image) {
             hint4Texture.magFilter = THREE.NearestFilter;
             hint4Texture.minFilter = THREE.NearestMipmapNearestFilter;
             hint4Texture.anisotropy = 0;
@@ -317,7 +317,7 @@ export default class Scene {
         let texture = new THREE.Texture();
 
         let tempo = new THREE.ImageLoader(manager);
-        tempo.load("https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Assets/torch.png', function (image) {
+        tempo.load('./Assets/torch.png', function (image) {
             texture.magFilter = THREE.NearestFilter;
             texture.minFilter = THREE.NearestMipmapNearestFilter;
             texture.anisotropy = 0;
