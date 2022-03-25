@@ -1,9 +1,9 @@
 /**
  * The player main logic
  */
-import Action from "../Action.js";
-import {ActorMotor} from "../Packages/PMG/PMG.js";
-import {CharacterMovementStyles} from "../Packages/PMG/Controller/CharacterMovementStyle.js";
+import Action from "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Programmes/Player/Action.js";
+import {ActorMotor} from "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Programmes/Packages/PMG/PMG.js";
+import {CharacterMovementStyles} from "https://raw.githubusercontent.com/Tom60chat/Cathedrale3D/main/Programmes/Packages/PMG/Controller/CharacterMovementStyle.js";
 
 export default class Player {
     //region Constructors
